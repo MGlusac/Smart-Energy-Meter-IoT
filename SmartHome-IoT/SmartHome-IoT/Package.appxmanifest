@@ -1,21 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10"
-  IgnorableNamespaces="uap mp iot">
+  IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="SmartHome-uwp"
+    Name="ca801dd9-d0be-47c5-8855-5c5f61193c99"
     Publisher="CN=MatejaG"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="6d1f121d-78d7-48d2-a847-f3d340bb17fb" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="ca801dd9-d0be-47c5-8855-5c5f61193c99" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>SmartHome</DisplayName>
+    <DisplayName>SmartHome-IoT</DisplayName>
     <PublisherDisplayName>MatejaG</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -29,24 +28,18 @@
   </Resources>
 
   <Applications>
-    <Application Id="App">
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="SmartHome_IoT.App">
       <uap:VisualElements
-        DisplayName="SmartHome"
+        DisplayName="SmartHome-IoT"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="SmartHome"
-        BackgroundColor="transparent"
-        AppListEntry="none">
+        Description="SmartHome-IoT"
+        BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
-      <Extensions>
-        <Extension Category="windows.backgroundTasks" EntryPoint="SmartHome.StartupTask">
-          <BackgroundTasks>
-            <iot:Task Type="startup" />
-          </BackgroundTasks>
-        </Extension>
-      </Extensions>
     </Application>
   </Applications>
 
