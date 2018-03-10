@@ -1,7 +1,137 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="home">
-    <h1>My homepage</h1>
-    <p>This is a test website</p>
+  <div style="padding:5px">
+    <h1>Cumulative Energy Usage</h1>
+    <p>Broken down per room</p>
+
+  </div>
+
+
 </div>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+window.onload = function () {
+
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	title: {
+		text: "Cumulative Energy Usage"
+	},
+	axisX: {
+		valueFormatString: "DDD",
+		minimum: new Date(2017, 1, 5, 23),
+		maximum: new Date(2017, 1, 12, 1)
+	},
+	axisY: {
+		title: "Energy Usage (kWh)"
+	},
+	legend: {
+		verticalAlign: "top",
+		horizontalAlign: "right",
+		dockInsidePlotArea: true
+	},
+	toolTip: {
+		shared: true
+	},
+	data: [{
+		name: "Kitchen",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(40,175,101,0.6)",
+		markerSize: 0,
+		dataPoints: [
+			{ x: new Date(2017, 1, 6), y: 22.0 },
+			{ x: new Date(2017, 1, 7), y: 12.0 },
+			{ x: new Date(2017, 1, 8), y: 14.4 },
+			{ x: new Date(2017, 1, 9), y: 16.2 },
+			{ x: new Date(2017, 1, 10), y: 12.9 },
+			{ x: new Date(2017, 1, 11), y: 10.9 },
+			{ x: new Date(2017, 1, 12), y: 12.9 }
+		]
+	},
+	{
+		name: "Living Room",
+		showInLegend: true,
+		legendMarkerType: "square",
+		type: "area",
+		color: "rgba(0,75,141,0.7)",
+		markerSize: 0,
+		dataPoints: [
+			{ x: new Date(2017, 1, 6), y: 4.2 },
+			{ x: new Date(2017, 1, 7), y: 3.4 },
+			{ x: new Date(2017, 1, 8), y: 2.9 },
+			{ x: new Date(2017, 1, 9), y: 4.2 },
+			{ x: new Date(2017, 1, 10), y: 5.3},
+			{ x: new Date(2017, 1, 11), y: 1.5 },
+			{ x: new Date(2017, 1, 12), y: 1.2 }
+		]
+	}]
+});
+chart2.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+    <canvas width="0.5" height="0.1"></canvas>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    //            label: <time> datetime.time  </time>,
+                datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+
+
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 0.5
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+
+    }
+});
+
+</script>
+
+
 {% endblock %}
