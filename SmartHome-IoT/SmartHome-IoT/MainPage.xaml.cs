@@ -29,7 +29,7 @@ namespace SmartHome_IoT
             SetupHat();
         }
 
-        public async void SendMessage(string message)
+        private async void SendMessage(string message)
         {
             // Send message to an IoT Hub using IoT Hub SDK
             try
@@ -48,7 +48,7 @@ namespace SmartHome_IoT
             _hat = await FEZHAT.CreateAsync();
             _timer = new DispatcherTimer
             {
-                Interval = TimeSpan.FromMilliseconds(1000)
+                Interval = TimeSpan.FromMilliseconds(400)
             };
             _timer.Tick += Timer_Tick;
             _timer.Start();
@@ -56,22 +56,25 @@ namespace SmartHome_IoT
 
         private void Timer_Tick(object sender, object e)
         {
-            // Light Sensor
-            var light = _hat.GetLightLevel();            
+            // Store light sensor value
+            var light = _hat.GetLightLevel();
 
-            //Direct Heat sensor
+            // Store motion sensor value
             var directHeat = _hat.ReadAnalog(FEZHAT.AnalogPin.Ain1);
            
-            //The light is on
-            Debug.WriteLine(directHeat);
-            if (light > 0.5 && directHeat <= 0.74)
+            // if the current room is empty and lights are on
+            if (light > 0.2 && directHeat <= 0.7)
             {
+                // Generate event message
                 var msg = new
                 {
+                    deviceid = "119",
                     timecreated = DateTime.UtcNow.ToString("o"),
-                    payload = "Energy waste!"
+                    timespan = "1 min",
+                    message = "Energy waste!"
                 };
 
+                // Send the message
                 SendMessage(msg.ToString());
             }
         }
