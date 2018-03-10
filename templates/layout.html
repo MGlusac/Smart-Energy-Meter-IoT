@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Flask App</title>
+      <title>Greenhack Energy Monitor</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
       <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
   </head>
@@ -11,8 +11,9 @@
         <h1 class="logo">Greenhack Energy Monitor</h1>
         <strong><nav>
           <ul class="menu">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('home') }}">Cumulative Energy Usage</a></li>
+            <li><a href="{{ url_for('about') }}">Energy Usage </a></li>
+            <li><a href=""><font color="white">John Smith</font></a></li>
           </ul>
         </nav></strong>
       </div>

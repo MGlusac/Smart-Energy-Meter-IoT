@@ -1,9 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="about">
-    <h1>Energy Usage for Each Room over Time</h1>
-    <p>Friendly Message</p>
-    <p>This was added later</p>
+
+  <div style="padding:5px">
+    <h1>Energy Usage over Time </h1>
+    <p>Broken down per Room  </p>
+
+  </div>
+
 
 </div>
     <!DOCTYPE HTML>
@@ -26,7 +30,7 @@
     		}
     	},
     	axisY: {
-    		title: "Energy Usage (MJ)",
+    		title: "Energy Usage (kWh)",
     		crosshair: {
     			enabled: true
     		}
@@ -49,20 +53,20 @@
     		xValueFormatString: "DD MMM, YYYY",
     		color: "#F08080",
     		dataPoints: [
-    			{ x: new Date(2017, 0, 3), y: 650 },
-    			{ x: new Date(2017, 0, 4), y: 700 },
-    			{ x: new Date(2017, 0, 5), y: 710 },
-    			{ x: new Date(2017, 0, 6), y: 658 },
-    			{ x: new Date(2017, 0, 7), y: 734 },
-    			{ x: new Date(2017, 0, 8), y: 963 },
-    			{ x: new Date(2017, 0, 9), y: 847 },
-    			{ x: new Date(2017, 0, 10), y: 853 },
-    			{ x: new Date(2017, 0, 11), y: 869 },
-    			{ x: new Date(2017, 0, 12), y: 943 },
-    			{ x: new Date(2017, 0, 13), y: 970 },
-    			{ x: new Date(2017, 0, 14), y: 869 },
-    			{ x: new Date(2017, 0, 15), y: 890 },
-    			{ x: new Date(2017, 0, 16), y: 930 }
+    			{ x: new Date(2017, 0, 3), y: 6.50 },
+    			{ x: new Date(2017, 0, 4), y: 7.00 },
+    			{ x: new Date(2017, 0, 5), y: 7.10 },
+    			{ x: new Date(2017, 0, 6), y: 6.58 },
+    			{ x: new Date(2017, 0, 7), y: 7.34 },
+    			{ x: new Date(2017, 0, 8), y: 9.63 },
+    			{ x: new Date(2017, 0, 9), y: 8.47 },
+    			{ x: new Date(2017, 0, 10), y: 8.53 },
+    			{ x: new Date(2017, 0, 11), y: 8.69 },
+    			{ x: new Date(2017, 0, 12), y: 9.43 },
+    			{ x: new Date(2017, 0, 13), y: 9.70 },
+    			{ x: new Date(2017, 0, 14), y: 8.69 },
+    			{ x: new Date(2017, 0, 15), y: 8.90 },
+    			{ x: new Date(2017, 0, 16), y: 9.30 }
     		]
     	},
     	{
@@ -71,20 +75,20 @@
     		name: "Living Room",
     		lineDashType: "dash",
     		dataPoints: [
-    			{ x: new Date(2017, 0, 3), y: 510 },
-    			{ x: new Date(2017, 0, 4), y: 560 },
-    			{ x: new Date(2017, 0, 5), y: 540 },
-    			{ x: new Date(2017, 0, 6), y: 558 },
-    			{ x: new Date(2017, 0, 7), y: 544 },
-    			{ x: new Date(2017, 0, 8), y: 693 },
-    			{ x: new Date(2017, 0, 9), y: 657 },
-    			{ x: new Date(2017, 0, 10), y: 663 },
-    			{ x: new Date(2017, 0, 11), y: 639 },
-    			{ x: new Date(2017, 0, 12), y: 673 },
-    			{ x: new Date(2017, 0, 13), y: 660 },
-    			{ x: new Date(2017, 0, 14), y: 562 },
-    			{ x: new Date(2017, 0, 15), y: 643 },
-    			{ x: new Date(2017, 0, 16), y: 570 }
+    			{ x: new Date(2017, 0, 3), y: 5.10 },
+    			{ x: new Date(2017, 0, 4), y: 5.60 },
+    			{ x: new Date(2017, 0, 5), y: 5.40 },
+    			{ x: new Date(2017, 0, 6), y: 5.58 },
+    			{ x: new Date(2017, 0, 7), y: 5.44 },
+    			{ x: new Date(2017, 0, 8), y: 6.93 },
+    			{ x: new Date(2017, 0, 9), y: 6.57 },
+    			{ x: new Date(2017, 0, 10), y: 6.63 },
+    			{ x: new Date(2017, 0, 11), y: 6.39 },
+    			{ x: new Date(2017, 0, 12), y: 6.73 },
+    			{ x: new Date(2017, 0, 13), y: 6.60 },
+    			{ x: new Date(2017, 0, 14), y: 5.62 },
+    			{ x: new Date(2017, 0, 15), y: 6.43 },
+    			{ x: new Date(2017, 0, 16), y: 5.70 }
     		]
     	}]
     });

@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="home">
-    <h1>My homepage</h1>
-    <p>This is a test website</p>
+  <div style="padding:5px">
+    <h1>Cumulative Energy Usage</h1>
+    <p>Broken down per room</p>
+
+  </div>
 
 
 </div>
@@ -16,7 +19,7 @@ window.onload = function () {
 var chart2 = new CanvasJS.Chart("chartContainer2", {
 	animationEnabled: true,
 	title: {
-		text: "Cumulative Energy Use"
+		text: "Cumulative Energy Usage"
 	},
 	axisX: {
 		valueFormatString: "DDD",
@@ -24,7 +27,7 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 		maximum: new Date(2017, 1, 12, 1)
 	},
 	axisY: {
-		title: "Number of Messages"
+		title: "Energy Usage (kWh)"
 	},
 	legend: {
 		verticalAlign: "top",
@@ -35,37 +38,37 @@ var chart2 = new CanvasJS.Chart("chartContainer2", {
 		shared: true
 	},
 	data: [{
-		name: "Received",
+		name: "Kitchen",
 		showInLegend: true,
 		legendMarkerType: "square",
 		type: "area",
 		color: "rgba(40,175,101,0.6)",
 		markerSize: 0,
 		dataPoints: [
-			{ x: new Date(2017, 1, 6), y: 220 },
-			{ x: new Date(2017, 1, 7), y: 120 },
-			{ x: new Date(2017, 1, 8), y: 144 },
-			{ x: new Date(2017, 1, 9), y: 162 },
-			{ x: new Date(2017, 1, 10), y: 129 },
-			{ x: new Date(2017, 1, 11), y: 109 },
-			{ x: new Date(2017, 1, 12), y: 129 }
+			{ x: new Date(2017, 1, 6), y: 22.0 },
+			{ x: new Date(2017, 1, 7), y: 12.0 },
+			{ x: new Date(2017, 1, 8), y: 14.4 },
+			{ x: new Date(2017, 1, 9), y: 16.2 },
+			{ x: new Date(2017, 1, 10), y: 12.9 },
+			{ x: new Date(2017, 1, 11), y: 10.9 },
+			{ x: new Date(2017, 1, 12), y: 12.9 }
 		]
 	},
 	{
-		name: "Sent",
+		name: "Living Room",
 		showInLegend: true,
 		legendMarkerType: "square",
 		type: "area",
 		color: "rgba(0,75,141,0.7)",
 		markerSize: 0,
 		dataPoints: [
-			{ x: new Date(2017, 1, 6), y: 42 },
-			{ x: new Date(2017, 1, 7), y: 34 },
-			{ x: new Date(2017, 1, 8), y: 29 },
-			{ x: new Date(2017, 1, 9), y: 42 },
-			{ x: new Date(2017, 1, 10), y: 53},
-			{ x: new Date(2017, 1, 11), y: 15 },
-			{ x: new Date(2017, 1, 12), y: 12 }
+			{ x: new Date(2017, 1, 6), y: 4.2 },
+			{ x: new Date(2017, 1, 7), y: 3.4 },
+			{ x: new Date(2017, 1, 8), y: 2.9 },
+			{ x: new Date(2017, 1, 9), y: 4.2 },
+			{ x: new Date(2017, 1, 10), y: 5.3},
+			{ x: new Date(2017, 1, 11), y: 1.5 },
+			{ x: new Date(2017, 1, 12), y: 1.2 }
 		]
 	}]
 });
@@ -84,7 +87,7 @@ chart2.render();
 
 
 
-    <canvas id="myChart" width="0.5" height="0.1"></canvas>
+    <canvas width="0.5" height="0.1"></canvas>
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
